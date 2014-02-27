@@ -66,8 +66,9 @@ In order to run it locally you'll need a basic server setup.
 
 Attribute  | Options                   | Default             | Description
 ---        | ---                       | ---                 | ---
-`path`      | *string*                  | ``               | A routing path
-
+`language`      | *string*                  | ``               | the language to highlight
+`theme`      | *string*                  | ``               | one of a number of supported themes (coy, dark, funky, okaidia, tomorrow, twilight)
+`themepath`      | *string*                  | `prism.css`               | path to a custom theme
 
 ## Contributing
 

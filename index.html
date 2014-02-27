@@ -13,32 +13,95 @@
     <!-- Styles for the demo -->
     <style>
     	prism-js {
-    		margin: 50px;
+    		margin-bottom: 50px;
     	}
     </style>
 </head>
 <body>
 
 <h1><a href="http://github.com/addyosmani/prism-js">&lt;prism-js&gt;</a></h1>
+<h2>A Polymer element for syntax highlighting with Prism.js</h2>
 
+<h2>Usage</h2>
+
+<h3>Specify language</h3>
+<prism-js language="markup">
+&lt;prism-js language="css"&gt;
+p { color: blue; }
+&lt;/prism-js&gt;
+</prism-js>
+
+<h3>Specify language and theme</h3>
+<prism-js language="markup" theme="tomorrow">
+&lt;prism-js language="css" theme="tomorrow"&gt;
+p { color: blue; }
+&lt;/prism-js&gt;
+</prism-js>
+
+<h3>Point to a custom theme: &lt;prism-js language="javascript" themepath="assets/monokai.css"&gt;</h3>
+<prism-js language="javascript" themepath="assets/monokai.css">
+if (true) {
+    console.log('foo');
+}
+</prism-js>
+
+<h3>Specify no language</h3>
+<prism-js>
+&lt;prism-js&gt;
+p { color: blue; }
+&lt;/prism-js&gt;
+</prism-js>
+
+
+<h2>More examples</h3>
+
+<h3>&lt;prism-js language="css"&gt;</h3>
 <prism-js language="css">
 p { color: blue; }
 </prism-js>
 
+<h3>&lt;prism-js language="markup"&gt;</h3>
+<prism-js language="markup">
+&lt;button&gt;&lt;/button&gt;
+</prism-js>
+
+<h3>&lt;prism-js language="css" theme="dark"&gt;</h3>
 <prism-js language="css" theme="dark">
 p { color: red; }
 </prism-js>
 
+<h3>&lt;prism-js language="css" theme="coy"&gt;</h3>
 <prism-js language="css" theme="coy">
 p { color: red; }
 </prism-js>
 
+<h3>&lt;prism-js language="css" theme="twilight"&gt;</h3>
 <prism-js language="css" theme="twilight">
 p { color: red; }
 </prism-js>
 
+<h3>&lt;prism-js language="css" theme="tomorrow"&gt;</h3>
+<prism-js language="css" theme="tomorrow">
+p { color: red; }
+</prism-js>
+
+<h3>&lt;prism-js language="css" theme="okaidia"&gt;</h3>
+<prism-js language="css" theme="okaidia">
+p { color: red; }
+</prism-js>
+
+<h3>&lt;prism-js language="javascript" theme="tomorrow"&gt;</h3>
+<prism-js language="javascript" theme="tomorrow">
+if (true) {
+    console.log('foo');
+}
+</prism-js>
+
+
+<h3>Attributes without value</h3>
 <prism-js language="markup">
-&lt;button&gt;&lt;/button&gt;
+&lt;p data-foo&gt;&lt;/p&gt;
+&lt;p data-foo &gt;&lt;/p&gt;
 </prism-js>
 
 
