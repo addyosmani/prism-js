@@ -1,6 +1,7 @@
 
-<link rel="import" href="../app/bower_components/polymer/polymer.html">
-<script src="director.min.js"></script>
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<script src="../bower_components/prismjs/prism.js"></script>
+<link rel="stylesheet" href="../bower_components/prismjs/prism.css">
 <!--
 /**
  * @module prism-js
@@ -17,13 +18,39 @@
  *
  */
 -->
-<polymer-element name="prism-js" attributes="">
+<polymer-element name="prism-js" attributes="theme language">
+<template>
+	<style>
+		:host { display: block };
+	</style>
+	<template bind="{{ theme as themeName }}">
+		<link rel="stylesheet" href="../bower_components/prismjs/prism-{{themeName}}.css">
+		<!--
+	<style>
+		@import url("../bower_components/prismjs/prism-{{themeName}}.css");
+	</style>
+-->
+	</template>
+	<code class="language-{{language}}">
+		<content id="codeviewer"></content>
+	</code>
+</template>
   <script>
     (function() {
       Polymer('prism-js', {
-       
-        ready: function() {
-          
+      	theme: 'tomorrow',
+      	language: '*',
+        attached: function() {
+/*
+			var link = document.createElement("link");
+			link.type = "text/css";
+			link.rel = "stylesheet";
+			link.href = '../bower_components/prismjs/prism-' + this.theme + '.css';
+			this.shadowRoot.appendChild(link);*/
+
+        	var viewer = this.shadowRoot.querySelector('codeviewer');
+        	//viewer.innerHTML = this.innerHTML;
+        	Prism.highlightElement(viewer);
         }
       });
     })();

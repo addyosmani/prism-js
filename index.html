@@ -5,17 +5,42 @@
     <title>&lt;prism-js&gt;</title>
 
     <!-- Importing Web Component's Polyfill -->
-    <script src="app/bower_components/platform/platform.js"></script>
+    <script src="bower_components/platform/platform.js"></script>
 
     <!-- Importing Custom Elements -->
     <link rel="import" href="src/prism-js.html">
 
     <!-- Styles for the demo -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+    	prism-js {
+    		margin: 50px;
+    	}
+    </style>
 </head>
 <body>
 
-    <h1><a href="http://github.com/addyosmani/x-route">&lt;prism-js&gt;</a></h1>
+<h1><a href="http://github.com/addyosmani/prism-js">&lt;prism-js&gt;</a></h1>
+
+<prism-js language="css">
+p { color: blue; }
+</prism-js>
+
+<prism-js language="css" theme="dark">
+p { color: red; }
+</prism-js>
+
+<prism-js language="css" theme="coy">
+p { color: red; }
+</prism-js>
+
+<prism-js language="css" theme="twilight">
+p { color: red; }
+</prism-js>
+
+<prism-js language="markup">
+&lt;button&gt;&lt;/button&gt;
+</prism-js>
+
 
 </body>
 </html>
