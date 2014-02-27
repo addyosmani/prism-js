@@ -1,6 +1,6 @@
 # &lt;prism-js&gt;
 
-A [Polymer](http://www.polymer-project.org) element for syntax highlighting with Prism.js
+A [Polymer](http://www.polymer-project.org) element for syntax highlighting with [Prism.js](http://prismjs.com/)
 
 > Maintained by [Addy Osmani](https://github.com/addyosmani).
 
@@ -33,7 +33,9 @@ $ bower install --save prism-js
 3. Start using it!
 
 ```html
-<prism-js></prism-js>
+<prism-js>
+	Your code goes here
+</prism-js>
 ```
 
 ## Examples
@@ -80,7 +82,7 @@ Attribute  | Options                   | Default             | Description
 
 ## History
 
-For detailed changelog, check [Releases](https://github.com/webcomponents/element-boilerplate/releases).
+For detailed changelog, check [Releases](https://github.com/addyosmani/prism-js/releases).
 
 ## License
 
