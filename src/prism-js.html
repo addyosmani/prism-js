@@ -42,7 +42,7 @@
 	    	Prism.highlightElement(this.$.codeviewer);
 
 	    	// Decide on theming based on user perference
-	    	this.themepath = this.themepath || (this.theme? '../bower_components/prismjs/prism-' + this.theme + '.css' : '../bower_components/prismjs/prism.css');
+	    	this.themepath = this.themepath || (this.theme? 'bower_components/prismjs/prism-' + this.theme + '.css' : 'bower_components/prismjs/prism.css');
 
 	    	// Import theme
 	        this.$.codeviewer.innerHTML+= '<style>@import url("' + this.themepath + '");</style>';
