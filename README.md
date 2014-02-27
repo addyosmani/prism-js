@@ -27,7 +27,7 @@ $ bower install --save prism-js
 2. Import Custom Element:
 
 ```html
-<link rel="import" href="src/prism-js.html">
+<link rel="import" href="prism-js.html">
 ```
 
 3. Start using it!
