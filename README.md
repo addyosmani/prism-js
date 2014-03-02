@@ -70,6 +70,7 @@ Attribute  | Options                   | Default             | Description
 ---        | ---                       | ---                 | ---
 `language`      | *string*                  | `*`               | the language to highlight
 `linenumbers`      | *boolean*                  | `false`               | display line numbers
+`escape`      | *boolean*                  | `false`               | auto-escape/encode HTML for you using he.js
 
 ## Contributing
 
