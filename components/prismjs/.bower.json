@@ -31,5 +31,5 @@
   },
   "_source": "git://github.com/didoarellano/prism.git",
   "_target": "*",
-  "_direct": true
+  "_originalSource": "prismjs"
 }

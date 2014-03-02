@@ -3,6 +3,7 @@
  * Based on https://github.com/chriskempson/tomorrow-theme
  * @author Rose Pritchard
  */
+
 code[class*="language-"],
 pre[class*="language-"] {
   color: #ccc;
