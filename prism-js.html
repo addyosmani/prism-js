@@ -2,6 +2,10 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 <script src="bower_components/prismjs/prism.js"></script>
 
+<!-- line number support -->
+<script src="assets/line-numbers.js"></script>
+<link rel="stylesheet" href="assets/line-numbers.css">
+
 <!--
 /**
  * @module prism-js
@@ -18,12 +22,12 @@
  *
  */
 -->
-<polymer-element name="prism-js" attributes="language">
+<polymer-element name="prism-js" attributes="language linenumbers">
 <template>
 	<style>
 		:host { display: block;};
 	</style>
-	<pre>
+	<pre class="{{ {'line-numbers': linenumbers} | tokenList }}">
 		<code id="codeviewer" class="language-{{language}}"></code>
 	</pre>
 </template>
@@ -31,6 +35,7 @@
     (function() {
       Polymer('prism-js', {
       	language: '*',
+      	linenumbers: false,
         attached: function() {
 	    	this.$.codeviewer.innerHTML = this.innerHTML;
 	    	Prism.highlightElement(this.$.codeviewer);
