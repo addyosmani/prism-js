@@ -10,12 +10,8 @@
     <!-- Importing Custom Elements -->
     <link rel="import" href="prism-js.html">
 
-    <!-- Styles for the demo -->
-    <style>
-    	prism-js {
-    		margin-bottom: 50px;
-    	}
-    </style>
+    <!-- Import Prism theme -->
+    <link rel="stylesheet" href="bower_components/prismjs/prism-okaidia.css">
 </head>
 <body>
 
@@ -25,81 +21,90 @@
 <h2>Usage</h2>
 
 <h3>Specify language</h3>
+
+<h4>&lt;prism-js language="css"&gt;</h4>
 <prism-js language="markup">
 &lt;prism-js language="css"&gt;
 p { color: blue; }
 &lt;/prism-js&gt;
 </prism-js>
 
-<h3>Specify language and theme</h3>
-<prism-js language="markup" theme="tomorrow">
-&lt;prism-js language="css" theme="tomorrow"&gt;
-p { color: blue; }
-&lt;/prism-js&gt;
-</prism-js>
-
-
-<h3>Specify no language</h3>
-<prism-js>
-&lt;prism-js&gt;
-p { color: blue; }
-&lt;/prism-js&gt;
-</prism-js>
-
-
-
-<h2>More examples</h3>
-
-<h3>&lt;prism-js language="css"&gt;</h3>
-<prism-js language="css">
-p { color: blue; }
-</prism-js>
-
-<h3>&lt;prism-js language="markup"&gt;</h3>
-<prism-js language="markup">
-&lt;button&gt;&lt;/button&gt;
-</prism-js>
-
-<!--
-<h3>&lt;prism-js language="css" theme="dark"&gt;</h3>
-<prism-js language="css" theme="dark">
-p { color: red; }
-</prism-js>
-
-<h3>&lt;prism-js language="css" theme="coy"&gt;</h3>
-<prism-js language="css" theme="coy">
-p { color: red; }
-</prism-js>
-
-<h3>&lt;prism-js language="css" theme="twilight"&gt;</h3>
-<prism-js language="css" theme="twilight">
-p { color: red; }
-</prism-js>
-
-<h3>&lt;prism-js language="css" theme="tomorrow"&gt;</h3>
-<prism-js language="css" theme="tomorrow">
-p { color: red; }
-</prism-js>
-
-<h3>&lt;prism-js language="css" theme="okaidia"&gt;</h3>
-<prism-js language="css" theme="okaidia">
-p { color: red; }
-</prism-js>
--->
-
-<h3>&lt;prism-js language="javascript"&gt;</h3>
+<h4>&lt;prism-js language="javascript"&gt;</h4>
 <prism-js language="javascript">
 if (true) {
     console.log('foo');
 }
 </prism-js>
 
-
 <h3>Attributes without value</h3>
+<h4>&lt;prism-js language="markup"&gt;</h4>
 <prism-js language="markup">
 &lt;p data-foo&gt;&lt;/p&gt;
 &lt;p data-foo &gt;&lt;/p&gt;
 </prism-js>
+
+<h3>Name attribute pair</h3>
+<h4>&lt;prism-js language="markup"&gt;</h4>
+<prism-js language="markup">
+&lt;p class=prism&gt;&lt;/p&gt;
+</prism-js>
+
+<h3>Namespaces</h3>
+<h4>&lt;prism-js language="markup"&gt;</h4>
+<prism-js language="markup">
+&lt;html:p foo:bar=&quot;baz&quot; foo:weee&gt;&lt;/html:p&gt;
+</prism-js>
+
+<h3>Tag that spans multiple lines</h3>
+<h4>&lt;prism-js language="markup"&gt;</h4>
+<prism-js language="markup">
+&lt;p
+&gt;hello!
+&lt;/p&gt;
+</prism-js>
+
+<h3>Embedded JS and CSS</h3>
+<h4>&lt;prism-js language="markup"&gt;</h4>
+<prism-js language="markup">
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;title&gt;I can haz embedded CSS and JS&lt;/title&gt;
+        &lt;style&gt;
+            @media print {
+                p { color: red !important; }
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;I can haz embedded CSS and JS&lt;/h1&gt;
+        &lt;script&gt;
+        if (true) {
+            console.log('foo');
+        }
+        &lt;/script&gt;
+    
+    &lt;/body&gt;
+    &lt;/html&gt;
+</prism-js>
+
+<h3>LESS variables</h3>
+<h4>&lt;prism-js language="css"&gt;</h4>
+<prism-js language="css">
+@main-color: red;
+.foo {
+  background: @main-color;
+}
+</prism-js>
+
+
+<h3>Nested strings</h3>
+<h4>&lt;prism-js language="javascript"&gt;</h4>
+<prism-js language="javascript">
+var foo = &quot;foo&quot;, bar = &quot;He &quot;said&quot; 'hi'!&quot;
+</prism-js>
+
 
 </body>
 </html>
