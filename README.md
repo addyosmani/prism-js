@@ -69,6 +69,7 @@ In order to run it locally you'll need a basic server setup.
 Attribute  | Options                   | Default             | Description
 ---        | ---                       | ---                 | ---
 `language`      | *string*                  | ``               | the language to highlight
+`linenumbers`      | *boolean*                  | `false`               | display line numbers
 
 ## Contributing
 
