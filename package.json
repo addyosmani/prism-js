@@ -1,6 +1,6 @@
 {
     "name": "prism-js",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A Polymer element for syntax highlighting with Prism.js",
     "author": "Addy Osmani",
     "license": "MIT",
