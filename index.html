@@ -120,5 +120,100 @@ var foo = &quot;foo&quot;, bar = &quot;He &quot;said&quot; 'hi'!&quot;
 </prism-js>
 
 
+<h3>Line Highlight</h3>
+
+<h4>Single line: &lt;prism-js language="css" linehighlight="5"&gt;</h4>
+<prism-js language="css" linehighlight="5">
+.line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: inherit 0;
+    margin-top: 1em; /* Same as .prism’s padding-top */
+
+    background: hsla(24, 20%, 50%,.08);
+    background: -moz-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+    background: -webkit-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+    background: -o-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+    background: linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+    
+    pointer-events: none;
+    
+    line-height: inherit;
+    white-space: pre;
+}
+</prism-js>
+
+<h4>Combined with linenumbers: &lt;prism-js language="css" linenumbers="true" linehighlight="3"&gt;</h4>
+<prism-js language="css" linenumbers="true" linehighlight="3">
+.line-highlight[data-end]:after {
+    content: attr(data-end);
+    top: auto;
+    bottom: .4em;
+}
+</prism-js>
+
+<h4>Ranges: &lt;prism-js language="markup" linehighlight="3-8"&gt;</h4>
+<prism-js language="markup" linehighlight="3-8">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Testing prism-js!&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Yay!&lt;/h1&gt;
+  &lt;script&gt;
+    var foo = 5;
+
+    for (var i=0; i &lt; foo; i++) {
+      console.log('Iteration '+i);
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</prism-js>
+
+<h4>Multiple lines: &lt;prism-js language="markup" linehighlight="2, 11, 15"&gt;</h4>
+<prism-js language="markup" linehighlight="2, 11, 15">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Testing prism-js!&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Yay!&lt;/h1&gt;
+  &lt;script&gt;
+    var foo = 5;
+
+    for (var i=0; i &lt; foo; i++) {
+      console.log('Iteration '+i);
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</prism-js>
+
+<h4>Multiple lines and ranges: &lt;prism-js language="markup" linehighlight="2-3, 6, 10-16"&gt;</h4>
+<prism-js language="markup" linehighlight="2-3, 6, 10-16">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Testing prism-js!&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Yay!&lt;/h1&gt;
+  &lt;script&gt;
+    var foo = 5;
+
+    for (var i=0; i &lt; foo; i++) {
+      console.log('Iteration '+i);
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</prism-js>
 </body>
 </html>
