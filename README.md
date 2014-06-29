@@ -70,6 +70,7 @@ Attribute  | Options                   | Default             | Description
 ---        | ---                       | ---                 | ---
 `language`      | *string*                  | `*`               | the language to highlight
 `linenumbers`      | *boolean*                  | `false`               | display line numbers
+`linehighlight`    | *string*                   | ` `                   | highlights specific lines and/or line ranges
 `escape`      | *boolean*                  | `false`               | auto-escape/encode HTML using he.js. Note: only use this feature with code-blocks you trust as inlined JS may get executed.
 
 ## Contributing

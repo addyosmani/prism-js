@@ -11,6 +11,12 @@
 <script src="assets/line-numbers.js"></script>
 <link rel="stylesheet" href="assets/line-numbers.css">
 
+<!-- line highlight support -->
+<script src="assets/line-highlight.js"></script>
+<link rel="stylesheet" href="assets/line-highlight.css">
+<!-- fixes line-height property on webkit | https://github.com/LeaVerou/prism/issues/40 -->
+<link rel="stylesheet" href="assets/line-highlight-fix.css">
+
 <!--
 /**
  * @module prism-js
@@ -27,12 +33,12 @@
  *
  */
 -->
-<polymer-element name="prism-js" attributes="language linenumbers escape">
+<polymer-element name="prism-js" attributes="language linenumbers escape linehighlight">
 <template>
 	<style>
 		:host { display: block;};
 	</style>
-	<pre class="{{ {'line-numbers': linenumbers} | tokenList }}">
+	<pre class="{{ {'line-numbers': linenumbers} | tokenList }}" data-line="{{ linehighlight }}">
 		<code id="codeviewer" class="language-{{language}}"></code>
 </pre>
 </template>
@@ -42,6 +48,7 @@
       	language: '*',
       	linenumbers: false,
       	escape: false,
+        linehighlight: '',
         attached: function() {
         	if(this.escape){
         		this.innerHTML = he.encode(this.innerHTML);
