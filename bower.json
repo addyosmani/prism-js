@@ -22,9 +22,8 @@
     "tests"
   ],
   "dependencies": {
-    "platform": "Polymer/platform#~0.2.0",
-    "polymer": "Polymer/polymer#~0.2.0",
     "prismjs": "*",
-    "he": "~0.3.6"
+    "he": "~0.3.6",
+    "polymer": "Polymer/polymer#~0.3.5"
   }
 }
