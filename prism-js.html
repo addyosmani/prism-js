@@ -24,13 +24,49 @@ Syntax highlighting for elements powered by [Prism.js](http://prismjs.com).
 For added goodness, you no longer need to specify `<code>` or `<pre>` blocks
 yourself. Just place your source inside the element.
 
-##### Examples
+#### Examples
 
-Specify language and include code inline:
+##### Specify language and include code inline:
 
       <prism-js language="css">
           p { color: blue; }
       </prism-js>
+
+##### Auto-escape code snippets like HTML:
+
+      <prism-js language="markup" escape="true">
+        <p>Some paragraph text</p>
+        <p data-foo="bar"></p>
+        <style>
+          p { color: red; }
+        </style>
+      </prism-js>
+
+
+##### Highlight nested strings
+
+      <prism-js language="javascript">
+        var foo = "foo", bar = "He "said" 'hi'!"
+      </prism-js>
+
+##### Highlight attributes without values:
+
+      <prism-js language="markup">
+        <p data-foo></p>
+        <p data-foo ></p>
+      </prism-js>
+
+##### Highlight namespaces:
+
+      <prism-js language="markup">
+        <html:p foo:bar="baz" foo:weee></html:p>
+      </prism-js>
+
+### Experimental features (Chrome/Opera):
+
+There are currently limitations to how the polyfills handle stylesheet
+injection for ShadowDOM that mean injected stylesheets for handling
+line-numbers, line-highlighting and themes are limited at present.
 
 Include line numbers:
 
@@ -44,16 +80,6 @@ Specify a language and theme:
 
       <prism-js language="css" theme="okaidia">
           p { color: blue; }
-      </prism-js>
-
-Auto-escape code snippets like HTML:
-
-      <prism-js language="markup" escape="true">
-        <p>Some paragraph text</p>
-        <p data-foo="bar"></p>
-        <style>
-          p { color: red; }
-        </style>
       </prism-js>
 
   Line-highlighting:
@@ -91,7 +117,7 @@ Auto-escape code snippets like HTML:
         display: block;
       }
     </style>
-    <pre class="{{linenumbers? 'line-numbers': ''}}" data-line="{{ linehighlight }}">
+    <pre id="pre" class="{{ linenumbers? 'line-numbers': '' }}" data-line="{{ linehighlight }}">
       <code id="codeviewer" class="language-{{language}}"></code>
     </pre>
   </template>
@@ -161,6 +187,7 @@ Auto-escape code snippets like HTML:
 
           this.injectTheme();
           this.injectPluginStylesheets();
+
         },
 
         /**
