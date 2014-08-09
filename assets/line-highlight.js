@@ -16,11 +16,17 @@ function hasClass(element, className) {
 var CRLF = crlf = /\r?\n|\r/g;
 
 function highlightLines(pre, lines, classes) {
-
 	var ranges = lines.replace(/\s+/g, '').split(','),
 	    offset = +pre.getAttribute('data-line-offset') || 0;
 
+	// This is a hack to get around Prism not (at this time) specifying
+	// line heights for their themes. It has been fixed in Prism master
+	// and can be removed at a future date when a new release has been
+	// made.
+
+	pre.style.lineHeight = 1.5;
 	var lineHeight = parseFloat(getComputedStyle(pre).lineHeight);
+	
 
 	for (var i=0, range; range = ranges[i++];) {
 		range = range.split('-');
