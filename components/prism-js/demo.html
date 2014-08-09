@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>prism-js Demo</title>
+
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="prism-js.html">
+
+</head>
+<body unresolved>
+
+<h1><a href="http://github.com/addyosmani/prism-js">&lt;prism-js&gt;</a></h1>
+<h2>A <a href="http://polymer-project.org">Polymer</a> element for syntax highlighting with <a href="http://prismjs.com">Prism.js</a></h2>
+
+<h2>Usage</h2>
+
+<h3>Specify language &amp; include code inline</h3>
+
+<prism-js language="markup">&lt;prism-js language="css"&gt;
+p { color: blue; }
+&lt;/prism-js&gt;
+</prism-js>
+
+Outputs:
+
+<prism-js language="css">p { color: blue; }</prism-js>
+
+<h3>Auto-escape HTML for you</h3>
+
+<h4>&lt;prism-js language="markup" escape="true"&gt;</h4>
+<prism-js language="markup" escape="true"><prism-js language="markup" escape="true">
+  <p>Some paragraph text</p>
+  <p data-foo="bar"></p>
+  <style>
+   p { color: red; }
+  </style>
+</prism-js>
+</prism-js>
+
+Outputs:
+
+<prism-js language="markup" escape="true">
+    <p>Some paragraph text</p>
+    <p data-foo="bar"></p>
+    <style>
+     p { color: red; }
+    </style>
+</prism-js>
+
+
+<h3>Attributes without value</h3>
+<h4>&lt;prism-js language="markup"&gt;</h4>
+<prism-js language="markup">&lt;p data-foo&gt;&lt;/p&gt;
+&lt;p data-foo &gt;&lt;/p&gt;
+</prism-js>
+
+<h3>Name attribute pair</h3>
+<h4>&lt;prism-js language="markup"&gt;</h4>
+<prism-js language="markup">&lt;p class=prism&gt;&lt;/p&gt;
+</prism-js>
+
+<h3>Namespaces</h3>
+<h4>&lt;prism-js language="markup"&gt;</h4>
+<prism-js language="markup">&lt;html:p foo:bar=&quot;baz&quot; foo:weee&gt;&lt;/html:p&gt;
+</prism-js>
+
+<h3>Tag that spans multiple lines</h3>
+<h4>&lt;prism-js language="markup"&gt;</h4>
+<prism-js language="markup">&lt;p
+&gt;hello!
+&lt;/p&gt;
+</prism-js>
+
+<h3>Embedded JS and CSS</h3>
+<h4>&lt;prism-js language="markup"&gt;</h4>
+<prism-js language="markup">
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;title&gt;I can haz embedded CSS and JS&lt;/title&gt;
+        &lt;style&gt;
+            @media print {
+                p { color: red !important; }
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;I can haz embedded CSS and JS&lt;/h1&gt;
+        &lt;script&gt;
+        if (true) {
+            console.log('foo');
+        }
+        &lt;/script&gt;
+
+    &lt;/body&gt;
+    &lt;/html&gt;
+</prism-js>
+
+<h3>LESS variables</h3>
+<h4>&lt;prism-js language="css"&gt;</h4>
+<prism-js language="css">
+@main-color: red;
+.foo {
+  background: @main-color;
+}
+</prism-js>
+
+
+<h3>Nested strings</h3>
+<h4>&lt;prism-js language="javascript"&gt;</h4>
+<prism-js language="javascript">var foo = &quot;foo&quot;, bar = &quot;He &quot;said&quot; 'hi'!&quot;</prism-js>
+
+
+<h2>Experimental features</h2>
+<small>There are currently limitations to how the polyfills handle
+  stylesheet injection for ShadowDOM that limit how much we can dynamically
+  work with injected styles.</small>
+
+<h3>Specify theme</h3>
+
+<prism-js language="markup" theme="okaidia">
+&lt;prism-js language="css" theme="okaidia"&gt;
+p { color: blue; }
+&lt;/prism-js&gt;
+</prism-js>
+
+<h3>Include line-numbers</h3>
+
+<h4>&lt;prism-js language="javascript" linenumbers="true"&gt;</h4>
+<prism-js language="javascript" linenumbers="true">if (true) {
+    console.log('foo');
+}
+</prism-js>
+
+<h3>Line Highlight</h3>
+
+<h4>Single line: &lt;prism-js language="css" linehighlight="5"&gt;</h4>
+<prism-js language="css" linehighlight="5">
+.line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: inherit 0;
+    margin-top: 1em; /* Same as .prism’s padding-top */
+
+    background: hsla(24, 20%, 50%,.08);
+    background: -moz-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+    background: -webkit-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+    background: -o-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+    background: linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+
+    pointer-events: none;
+
+    line-height: inherit;
+    white-space: pre;
+}
+</prism-js>
+
+<h4>Combined with linenumbers: &lt;prism-js language="css" linenumbers="true" linehighlight="3"&gt;</h4>
+<prism-js language="css" linenumbers="true" linehighlight="3">
+.line-highlight[data-end]:after {
+    content: attr(data-end);
+    top: auto;
+    bottom: .4em;
+}
+</prism-js>
+
+<h4>Ranges: &lt;prism-js language="markup" linehighlight="3-8"&gt;</h4>
+<prism-js language="markup" linehighlight="3-8">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Testing prism-js!&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Yay!&lt;/h1&gt;
+  &lt;script&gt;
+    var foo = 5;
+
+    for (var i=0; i &lt; foo; i++) {
+      console.log('Iteration '+i);
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</prism-js>
+
+<h4>Multiple lines: &lt;prism-js language="markup" linehighlight="2, 11, 16"&gt;</h4>
+<prism-js language="markup" linehighlight="2, 11, 16">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Testing prism-js!&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Yay!&lt;/h1&gt;
+  &lt;script&gt;
+    var foo = 5;
+
+    for (var i=0; i &lt; foo; i++) {
+      console.log('Iteration '+i);
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</prism-js>
+
+<h4>Multiple lines and ranges: &lt;prism-js language="markup" linehighlight="2-3, 10-16"&gt;</h4>
+<prism-js language="markup" linehighlight="2-3, 10-16">
+&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Testing prism-js!&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Yay!&lt;/h1&gt;
+  &lt;script&gt;
+    var foo = 5;
+
+    for (var i=0; i &lt; foo; i++) {
+      console.log('Iteration '+i);
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</prism-js>
+
+</body>
+</html>

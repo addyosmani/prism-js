@@ -1,0 +1,7 @@
+{
+  "name": "prism-js#gh-pages",
+  "private": true,
+  "dependencies": {
+    "prism-js": "addyosmani/prism-js#master"
+  }
+}

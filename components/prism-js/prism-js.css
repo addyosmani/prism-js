@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+
+
+:host pre, :host code[class*="language-"],
+:host pre[class*="language-"] {
+  line-height: 1.2;
+}
