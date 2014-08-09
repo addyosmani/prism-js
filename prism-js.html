@@ -199,6 +199,14 @@ Specify a language and theme:
           this.highlight();
         },
 
+        /**
+         * The `highlight` method will re-apply Prism highlighting
+         * as well as any theme or plugin highlighting supported to the
+         * current element. This should only be used if you are certain
+         * the content/inputValue of the snippet has changed.
+         *
+         * @method highlight
+         */
         highlight: function () {
           if (this.inputValue.length > 0) {
             this.innerHTML = this.inputValue;
