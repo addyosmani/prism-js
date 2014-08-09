@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>prism-js Demo</title>
+
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="prism-js.html">
+  <link rel="import" href="../core-input/core-input.html">
+
+  <style>
+    aside {
+      background: #ccc;
+      padding: 1em;
+      margin-right: 2em;
+      font-size: 12px;
+      width: 250px;
+      border-radius: 3px;
+    }
+
+    core-input {
+      margin: 1em;
+    }
+
+    core-input[multiline] {
+      border: 1px dotted #ccc;
+    }
+
+    core-input.sized {
+      width: 500px;
+      height: 200px;
+    }
+  </style>
+
+</head>
+<body unresolved>
+
+<h1>Data-binding with &lt;prism-js&gt; &amp; &lt;core-input&gt;</h1>
+<p>This demo uses the <code>inputValue</code> attribute on the &lt;prism-js&gt;
+  element to bind between it and the input to &lt;core-input&gt;</p>
+
+<template id="tmpl" is="auto-binding">
+
+  <h2>Input</h2>
+
+ <section horizontal start layout>
+    <core-input class="sized" multiline rows="fit" inputValue="{{source}}"></core-input>
+  </section>
+
+  <h2>Output</h2>
+  <prism-js language="css" inputValue="{{source}}">
+  </prism-js>
+
+</template>
+
+<script>
+  document.addEventListener('polymer-ready', function(){
+    var tmpl = document.querySelector('#tmpl');
+    tmpl.source = '#shirt { color: hotpink; } \n.fear { display: none; }';
+  });
+</script>
+
+</body>
+</html>
