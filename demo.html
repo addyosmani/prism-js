@@ -23,6 +23,12 @@ p { color: blue; }
 &lt;/prism-js&gt;
 </prism-js>
 
+Outputs:
+
+<prism-js language="css">
+p { color: blue; }
+</prism-js>
+
 <h3>Auto-escape HTML for you</h3>
 
 <h4>&lt;prism-js language="markup" escape="true"&gt;</h4>
@@ -35,6 +41,17 @@ p { color: blue; }
     </style>
 </prism-js>
 </prism-js>
+
+Outputs:
+
+<prism-js language="markup" escape="true">
+    <p>Some paragraph text</p>
+    <p data-foo="bar"></p>
+    <style>
+     p { color: red; }
+    </style>
+</prism-js>
+
 
 <h3>Attributes without value</h3>
 <h4>&lt;prism-js language="markup"&gt;</h4>
