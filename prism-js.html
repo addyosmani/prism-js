@@ -9,6 +9,7 @@
 
 <!-- line number support -->
 <script src="assets/line-numbers.js"></script>
+<!--<link rel="stylesheet" href="assets/line-numbers.css"/>-->
 
 <!-- line highlight support -->
 <script src="assets/line-highlight.js"></script>
@@ -125,7 +126,7 @@ Specify a language and theme:
         display: block;
       }
     </style>
-    <pre id="pre" class="{{ linenumbers? 'line-numbers': '' }}" data-line="{{ linehighlight }}"><code id="codeviewer" class="language-{{language}}"></code></pre>
+    <pre class="{{ linenumbers? 'line-numbers': '' }}" data-line="{{ linehighlight }}"><code id="codeviewer" class="language-{{language}}"></code></pre>
   </template>
   <script>
     (function() {
@@ -194,11 +195,11 @@ Specify a language and theme:
         * @default ''
         */
         inputValue: '',
-        attached: function() {
+        attached: function () {
           this.highlight();
         },
 
-        highlight: function() {
+        highlight: function () {
           if (this.inputValue.length > 0) {
             this.innerHTML = this.inputValue;
           }
@@ -220,7 +221,7 @@ Specify a language and theme:
         *
         * @method injectTheme
         */
-        injectTheme: function() {
+        injectTheme: function () {
           var cssFile;
           if (this.theme.length > 0) {
             cssFile = '../prismjs/prism-' + this.theme + '.css';
@@ -230,7 +231,7 @@ Specify a language and theme:
           this.injectStylesheet(cssFile);
         },
 
-        injectPluginStylesheets: function() {
+        injectPluginStylesheets: function () {
           if (this.linenumbers) {
             this.injectStylesheet('assets/line-numbers.css');
           }
@@ -250,7 +251,7 @@ Specify a language and theme:
          * @method injectStylesheet
          * @param {String} src a valid path to a stylesheet
          */
-        injectStylesheet: function(src) {
+        injectStylesheet: function (src) {
           if(src.length > 0) {
             var link = document.createElement('link');
             link.type = 'text/css';

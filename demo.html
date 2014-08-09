@@ -17,28 +17,24 @@
 
 <h3>Specify language &amp; include code inline</h3>
 
-<prism-js language="markup">
-&lt;prism-js language="css"&gt;
+<prism-js language="markup">&lt;prism-js language="css"&gt;
 p { color: blue; }
 &lt;/prism-js&gt;
 </prism-js>
 
 Outputs:
 
-<prism-js language="css">
-p { color: blue; }
-</prism-js>
+<prism-js language="css">p { color: blue; }</prism-js>
 
 <h3>Auto-escape HTML for you</h3>
 
 <h4>&lt;prism-js language="markup" escape="true"&gt;</h4>
-<prism-js language="markup" escape="true">
-<prism-js language="markup" escape="true">
-    <p>Some paragraph text</p>
-    <p data-foo="bar"></p>
-    <style>
-     p { color: red; }
-    </style>
+<prism-js language="markup" escape="true"><prism-js language="markup" escape="true">
+  <p>Some paragraph text</p>
+  <p data-foo="bar"></p>
+  <style>
+   p { color: red; }
+  </style>
 </prism-js>
 </prism-js>
 
@@ -55,27 +51,23 @@ Outputs:
 
 <h3>Attributes without value</h3>
 <h4>&lt;prism-js language="markup"&gt;</h4>
-<prism-js language="markup">
-&lt;p data-foo&gt;&lt;/p&gt;
+<prism-js language="markup">&lt;p data-foo&gt;&lt;/p&gt;
 &lt;p data-foo &gt;&lt;/p&gt;
 </prism-js>
 
 <h3>Name attribute pair</h3>
 <h4>&lt;prism-js language="markup"&gt;</h4>
-<prism-js language="markup">
-&lt;p class=prism&gt;&lt;/p&gt;
+<prism-js language="markup">&lt;p class=prism&gt;&lt;/p&gt;
 </prism-js>
 
 <h3>Namespaces</h3>
 <h4>&lt;prism-js language="markup"&gt;</h4>
-<prism-js language="markup">
-&lt;html:p foo:bar=&quot;baz&quot; foo:weee&gt;&lt;/html:p&gt;
+<prism-js language="markup">&lt;html:p foo:bar=&quot;baz&quot; foo:weee&gt;&lt;/html:p&gt;
 </prism-js>
 
 <h3>Tag that spans multiple lines</h3>
 <h4>&lt;prism-js language="markup"&gt;</h4>
-<prism-js language="markup">
-&lt;p
+<prism-js language="markup">&lt;p
 &gt;hello!
 &lt;/p&gt;
 </prism-js>
@@ -118,9 +110,7 @@ Outputs:
 
 <h3>Nested strings</h3>
 <h4>&lt;prism-js language="javascript"&gt;</h4>
-<prism-js language="javascript">
-var foo = &quot;foo&quot;, bar = &quot;He &quot;said&quot; 'hi'!&quot;
-</prism-js>
+<prism-js language="javascript">var foo = &quot;foo&quot;, bar = &quot;He &quot;said&quot; 'hi'!&quot;</prism-js>
 
 
 <h2>Experimental features</h2>
@@ -139,8 +129,7 @@ p { color: blue; }
 <h3>Include line-numbers</h3>
 
 <h4>&lt;prism-js language="javascript" linenumbers="true"&gt;</h4>
-<prism-js language="javascript" linenumbers="true">
-if (true) {
+<prism-js language="javascript" linenumbers="true">if (true) {
     console.log('foo');
 }
 </prism-js>

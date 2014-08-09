@@ -26,7 +26,7 @@ function highlightLines(pre, lines, classes) {
 
 	pre.style.lineHeight = 1.5;
 	var lineHeight = parseFloat(getComputedStyle(pre).lineHeight);
-	
+
 
 	for (var i=0, range; range = ranges[i++];) {
 		range = range.split('-');
@@ -48,7 +48,7 @@ function highlightLines(pre, lines, classes) {
       }
     }
 
-		line.style.top = (start - offset - 1) * lineHeight + 'px';
+		line.style.top = ((start - offset - 1) * lineHeight * 1.2) + 'px';
 
     //allow this to play nicely with the line-numbers plugin
     if(hasClass(pre, 'line-numbers')) {
