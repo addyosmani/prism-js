@@ -9,9 +9,6 @@
 
     <!-- Importing Custom Elements -->
     <link rel="import" href="prism-js.html">
-
-    <!-- Import Prism theme -->
-    <link rel="stylesheet" href="components/prismjs/prism-okaidia.css">
 </head>
 <body>
 
@@ -24,6 +21,14 @@
 
 <prism-js language="markup">
 &lt;prism-js language="css"&gt;
+p { color: blue; }
+&lt;/prism-js&gt;
+</prism-js>
+
+<h3>Specify theme</h3>
+
+<prism-js language="markup" theme="okaidia">
+&lt;prism-js language="css" theme="okaidia"&gt;
 p { color: blue; }
 &lt;/prism-js&gt;
 </prism-js>

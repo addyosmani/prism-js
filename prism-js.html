@@ -33,7 +33,7 @@
  *
  */
 -->
-<polymer-element name="prism-js" attributes="language linenumbers escape linehighlight">
+<polymer-element name="prism-js" attributes="language linenumbers escape linehighlight theme">
 <template>
 	<style>
 		:host { display: block;};
@@ -56,6 +56,27 @@
 
 	    	this.$.codeviewer.innerHTML = this.innerHTML;
 	    	Prism.highlightElement(this.$.codeviewer);
+
+		this.injectCss();
+        },
+
+	// We need to dynamically inject the stylesheet based
+	// on the theme attribute
+	injectCss: function() {
+		var cssFile;
+		if(this.theme) {
+			cssFile = 'components/prismjs/prism-' + this.theme + '.css';
+		} else {
+			cssFile = 'components/prismjs/prism.css';
+		}
+
+		var link = document.createElement('link');
+		link.type = 'text/css';
+		link.rel = 'stylesheet';
+		link.href = cssFile;
+		this.shadowRoot.appendChild(link);
+
+		this.element.convertSheetsToStyles(this.shadowRoot);
         }
       });
     })();
