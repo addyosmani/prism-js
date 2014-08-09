@@ -23,23 +23,6 @@ p { color: blue; }
 &lt;/prism-js&gt;
 </prism-js>
 
-<h3>Specify theme</h3>
-
-<prism-js language="markup" theme="okaidia">
-&lt;prism-js language="css" theme="okaidia"&gt;
-p { color: blue; }
-&lt;/prism-js&gt;
-</prism-js>
-
-<h3>Include line-numbers</h3>
-
-<h4>&lt;prism-js language="javascript" linenumbers="true"&gt;</h4>
-<prism-js language="javascript" linenumbers="true">
-if (true) {
-    console.log('foo');
-}
-</prism-js>
-
 <h3>Auto-escape HTML for you</h3>
 
 <h4>&lt;prism-js language="markup" escape="true"&gt;</h4>
@@ -123,6 +106,28 @@ var foo = &quot;foo&quot;, bar = &quot;He &quot;said&quot; 'hi'!&quot;
 </prism-js>
 
 
+<h2>Experimental features (Chrome/Opera only)</h2>
+<small>There are currently limitations to how the polyfills handle
+  stylesheet injection for ShadowDOM that limit how much we can dynamically
+  work with injected styles.</small>
+
+<h3>Specify theme</h3>
+
+<prism-js language="markup" theme="okaidia">
+&lt;prism-js language="css" theme="okaidia"&gt;
+p { color: blue; }
+&lt;/prism-js&gt;
+</prism-js>
+
+<h3>Include line-numbers</h3>
+
+<h4>&lt;prism-js language="javascript" linenumbers="true"&gt;</h4>
+<prism-js language="javascript" linenumbers="true">
+if (true) {
+    console.log('foo');
+}
+</prism-js>
+
 <h3>Line Highlight</h3>
 
 <h4>Single line: &lt;prism-js language="css" linehighlight="5"&gt;</h4>
@@ -177,8 +182,8 @@ var foo = &quot;foo&quot;, bar = &quot;He &quot;said&quot; 'hi'!&quot;
 &lt;/html&gt;
 </prism-js>
 
-<h4>Multiple lines: &lt;prism-js language="markup" linehighlight="2, 11, 15"&gt;</h4>
-<prism-js language="markup" linehighlight="2, 11, 15">
+<h4>Multiple lines: &lt;prism-js language="markup" linehighlight="2, 11, 16"&gt;</h4>
+<prism-js language="markup" linehighlight="2, 11, 16">
 &lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -198,8 +203,8 @@ var foo = &quot;foo&quot;, bar = &quot;He &quot;said&quot; 'hi'!&quot;
 &lt;/html&gt;
 </prism-js>
 
-<h4>Multiple lines and ranges: &lt;prism-js language="markup" linehighlight="2-3, 6, 10-16"&gt;</h4>
-<prism-js language="markup" linehighlight="2-3, 6, 10-16">
+<h4>Multiple lines and ranges: &lt;prism-js language="markup" linehighlight="2-3, 10-16"&gt;</h4>
+<prism-js language="markup" linehighlight="2-3, 10-16">
 &lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
