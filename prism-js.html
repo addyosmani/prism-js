@@ -159,30 +159,55 @@ Auto-escape code snippets like HTML:
           this.$.codeviewer.innerHTML = this.innerHTML;
           Prism.highlightElement(this.$.codeviewer);
 
-          this.injectCss();
+          this.injectTheme();
+          this.injectPluginStylesheets();
         },
 
         /**
-        * The `injectCss` method dynamically injects a stylesheet for
+        * The `injectTheme` method dynamically injects a stylesheet for
         * themining based on the `theme` attribute.
         *
-        * @method injectCss
+        * @method injectTheme
         */
-        injectCss: function() {
+        injectTheme: function() {
           var cssFile;
           if (this.theme.length > 0) {
             cssFile = '../prismjs/prism-' + this.theme + '.css';
           } else {
             cssFile = '../prismjs/prism.css';
           }
+          this.injectStylesheet(cssFile);
+        },
 
-          var link = document.createElement('link');
-          link.type = 'text/css';
-          link.rel = 'stylesheet';
-          link.href = cssFile;
-          this.shadowRoot.appendChild(link);
+        injectPluginStylesheets: function() {
+          if (this.linenumbers) {
+            this.injectStylesheet('assets/line-numbers.css');
+          }
 
-          this.element.convertSheetsToStyles(this.shadowRoot);
+          if (this.linehighlight.length > 0) {
+            this.injectStylesheet('assets/line-highlight.css');
+            this.injectStylesheet('assets/line-highlight-fix.css');
+          }
+        },
+        /**
+         * The `injectStylesheet` method will dynamically inject a
+         * stylesheet into the shadowRoot of the element before converting
+         * it to a form that can be interpreted by Polymer. This method
+         * is used internally and may be useful if working with plugins
+         * that require styling Shadow DOM.
+         *
+         * @method injectStylesheet
+         * @param {String} src a valid path to a stylesheet
+         */
+        injectStylesheet: function(src) {
+          if(src.length > 0) {
+            var link = document.createElement('link');
+            link.type = 'text/css';
+            link.rel = 'stylesheet';
+            link.href = src;
+            this.shadowRoot.appendChild(link);
+            this.element.convertSheetsToStyles(this.shadowRoot);
+          }
         }
       });
     })();
