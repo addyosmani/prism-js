@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "prismjs": "*",
+    "prism": "*",
     "he": "~0.3.6",
     "polymer": "Polymer/polymer#~0.3.5",
     "core-input": "Polymer/core-input#~0.3.5"
