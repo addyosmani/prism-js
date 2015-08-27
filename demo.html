@@ -7,6 +7,9 @@
   <script src="../platform/platform.js"></script>
   <link rel="import" href="prism-js.html">
   <link href="../prism/themes/prism.css" rel="stylesheet" />
+  <link href="assets/line-numbers.css" rel="stylesheet" />
+  <link href="assets/line-highlight.css" rel="stylesheet" />
+  <link href="assets/line-highlight-fix.css" rel="stylesheet" />
 
 </head>
 <body unresolved>
@@ -115,17 +118,6 @@ Outputs:
 
 
 <h2>Experimental features</h2>
-<small>There are currently limitations to how the polyfills handle
-  stylesheet injection for ShadowDOM that limit how much we can dynamically
-  work with injected styles.</small>
-
-<h3>Specify theme</h3>
-
-<prism-js language="markup" theme="okaidia">
-&lt;prism-js language="css" theme="okaidia"&gt;
-p { color: blue; }
-&lt;/prism-js&gt;
-</prism-js>
 
 <h3>Include line-numbers</h3>
 
