@@ -139,10 +139,8 @@ Specify a language and theme:
   </template>
   <script>
     (function() {
-      Polymer( {
-
+      Polymer({
         is: 'prism-js',
-
         properties: {
           /**
            * The `language` attribute specifies the language class for the
@@ -226,23 +224,17 @@ Specify a language and theme:
             type: String,
             value: ''
           }
-
         },
-
         setLanguage: function(lang) {
           return 'language-' + lang;
         },
-
         setLineNumbers: function(lineNumbers) {
-          if(lineNumbers) {
+          if (lineNumbers) {
             return 'line-numbers';
           }
           return '';
 
         },
-
-
-        //TODO: find a way to inject the styles in the component
         inputValueChanged: function (text) {
 
           if (text.length > 0) {
@@ -254,13 +246,12 @@ Specify a language and theme:
           }
 
           Prism.highlightElement(this.$.codeviewer);
+          //TODO: find a way to inject the styles in the component
           return true;
         },
-
         attached: function() {
           this.inputValueChanged(Polymer.dom(this).textContent);
         }
-
       });
     })();
   </script>
