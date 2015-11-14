@@ -1,7 +1,7 @@
 pre.line-numbers {
 	position: relative;
-	padding-left: 3.8em;
-	padding-bottom: 2em;
+	padding-left: 3.8em !important;
+	padding-bottom: 2em !important;
 	counter-reset: linenumber;
 }
 

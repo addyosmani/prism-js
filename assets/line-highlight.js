@@ -48,7 +48,7 @@ function highlightLines(pre, lines, classes) {
       }
     }
 
-		line.style.top = ((start - offset - 1) * lineHeight * 1.2) + 'px';
+		line.style.top = ((start - offset - 1) * lineHeight * 1) + 'px';
 
     //allow this to play nicely with the line-numbers plugin
     if(hasClass(pre, 'line-numbers')) {
