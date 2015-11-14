@@ -17,7 +17,7 @@
   "dependencies": {
     "prism": "*",
     "he": "~0.5.0",
-    "polymer": "Polymer/polymer#^1.1.0",
+    "polymer": "Polymer/polymer#^1.2.0",
     "iron-autogrow-textarea": "PolymerElements/iron-autogrow-textarea#~1.0.4"
   }
 }
