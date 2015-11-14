@@ -1,4 +1,4 @@
 prism-js
 ================
 
-See the [component page](http://addyosmani.github.io/prism-js) for more information.
+A Polymer syntax highlighting element for Prism.js.
